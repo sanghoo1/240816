@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>다양한폼관련태그</title>
+</head>
+<body>
+  <h1>다양한 폼 관련 태그</h1>
+  <h2>input 태그</h2>
+  <p>인라인 요소로 폼 안의 기본적인 필드 값을 만들 때 사용. 빈요소</p>
+  <!-- 
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+
+    input은 type 속성 값에 따라 역할이 달라짐
+      name="데이터 이름"
+      maxlength="value의 최대 수(문자 수)"
+      minlength="calue의 최소 수(문자 수)"
+      placeholder="컨트롤 박스 안의 힌트"
+      required="필수항목. 단,  form 태그가 반드시 정의되어있어야 함" - 값이 한 개 뿐이여서 생략가능
+      value="입력값, 출력값, 전송값"
+      autofocus="자동 포커스"
+      checked="체크박스 자동 선택"
+      selected="selcet옵션 자동 선택"
+      disabled="비활성화"
+  -->
+  <form>
+   <section>
+    <h3>type="text" / type="password"</h3>
+    사용자명: <input type="text" name="userName" id="user_name" maxlength="10" placeholder="이름을 작성하세요" autofocus><br>
+    비밀번호: <input type="password" name="userPw" id="userPw" minlength="4"><br> <!-- required를 쓰면 비밀번호 박스에 마우스를 가져다 대면 이 박스란에 작성해주세요라는 안내문구가 나온다-->
+
+    <input type="submit" value="확인">
+    <input type="reset" value="취소">
+    <input type="button" value="버튼">
+   </section>
+   <hr>
+
+   <section>
+    <h3>여러 줄의 텍스트 박스</h3>
+    <textarea name="textBox" id="textBox" cols="30" rows="10" placeholder="텍스트 박스"></textarea>
+   </section>
+   <hr>
+
+   <section>
+    <h3>라디오 버튼</h3>
+    <p>하나의 값만 선택 가능. <strong>name 속성은 반드시 같아야함.</strong></p>
+    <input type="radio" name="lunch" value="김밥" checked>김밥
+    <input type="radio" name="lunch" value="짜짱면">짜장면
+    <input type="radio" name="lunch" value="짬뽕">짬뽕
+    <input type="radio" name="lunch" value="햄버거">햄버거
+    <!-- value를 넣는 이유는 데이터 전송시 user가 선택한 값이 무엇인지 value값이 필요하기때문에이다. -->
+   </section>
+   <hr>
+
+   <section>
+    <h3>체크박스 버튼</h3>
+    <p>여러 개의 값 선택 가능. <strong>name 속성은 반드시 같아야함</strong></p>
+    <input type="checkbox" name="beverage" value="커피">커피
+    <input type="checkbox" name="beverage" value="탄산수">탄산수
+    <input type="checkbox" name="beverage" value="티">티
+    <input type="checkbox" name="beverage" value="기타">기타
+   </section>
+   <hr>
+
+   <section>
+
+    <h3>드롭다운 형태의 메뉴</h3>
+    <select name="menu" id="menu">
+      <!-- 반드시 하나의 option은 있어야 함 -->
+      <option value="">선택</option>
+      <!-- 옵션 그룹 사용시 label 필수 -->
+      <optgroup label="그룹1">
+        <option value="아이스크림">아이스크림</option>
+        <option value="음료" selected>음료</option>
+        <option value="과일">과일</option>
+      </optgroup>
+      <optgroup label="그룹2">
+        <option value="아이스커피">아이스커피</option>
+        <option value="아이스라떼">아이스라떼</option>
+        <option value="밀크티">밀크티</option>
+      </optgroup>
+    </select>
+    <hr>
+
+   </section>
+   <section>
+    <h3>파일 첨부</h3>
+    <input type="file" name="userFile">
+    <!-- accept="특정 확장자만 첨부" -->
+    <input type="file" name="file" accept=".jpg, .png, .pdf"><br>
+    <button type="submit">전송</button>
+    <button type="reset">취소</button>
+   </section>
+   <hr>
+
+   <section>
+    <h3>날짜</h3>
+    <input type="date" name="yymmdd">
+    <hr>
+    <h3>이메일</h3>
+    <input type="email" name="userEmail">
+    <hr>
+    <h3>url</h3>
+    <input type="url" name="userUrl">
+    <hr>
+    <h3>검색</h3>
+    <input type="search" name="userSearch">
+    <hr>
+    <h3>범위</h3>
+    <input type="range" name="userRange">
+    <hr>
+    <h3>숫자</h3>
+    <input type="number" name="userNumber">
+    <hr>
+    <h3>전화</h3>
+    <input type="tel" name="userTel" disabled>
+   </section>
+   
+  </form>
+  
+
+</body>
+</html>
